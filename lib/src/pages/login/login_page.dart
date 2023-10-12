@@ -17,7 +17,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
-    _usernameController.text = 'adminasda';
+    _usernameController.text = 'admin';
     _passwordController.text = '1234';
   }
 
@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login Pageasdasd'),
+        title: const Text('Login Page'),
       ),
       body: Container(
         width: double.infinity,
