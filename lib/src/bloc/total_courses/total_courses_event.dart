@@ -9,3 +9,8 @@ class TotalCoursesEventSelect extends TotalCoursesEvent {
   final Courses courses;
   TotalCoursesEventSelect(this.courses);
 }
+
+class TotalCoursesEventCheckIn extends TotalCoursesEvent {
+  final TimeAttendance timeAttendance;
+  TotalCoursesEventCheckIn(this.timeAttendance);
+}

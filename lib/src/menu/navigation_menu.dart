@@ -67,9 +67,12 @@ class _NavigationMenuState extends State<NavigationMenu> {
   }
 
   void _onTap() {
-    context
-        .read<TotalCoursesBloc>()
-        .add(TotalCoursesEventSelect(Courses(code: '', name: '', color: 0)));
+    context.read<TotalCoursesBloc>().add(TotalCoursesEventSelect(Courses(
+        code: '',
+        name: '',
+        color: 0,
+        startClassTime: DateTime.now(),
+        endClassTime: DateTime.now())));
     Navigator.pushNamed(context, AppRoute.totalCoursesPage);
   }
 }

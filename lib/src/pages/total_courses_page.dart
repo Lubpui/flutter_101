@@ -21,26 +21,89 @@ class _TotalCoursesPageState extends State<TotalCoursesPage> {
       code: "CE454",
       name: "Mobile Application",
       color: 0xFF4ade80,
+      startClassTime: DateTime(
+        0,
+        0,
+        0,
+        9,
+      ),
+      endClassTime: DateTime(
+        0,
+        0,
+        0,
+        12,
+      ),
     ),
     Courses(
       code: "CE437",
       name: "Principles Of Robotics",
       color: 0xFF22d3ee,
+      startClassTime: DateTime(
+        0,
+        0,
+        0,
+        9,
+      ),
+      endClassTime: DateTime(
+        0,
+        0,
+        0,
+        12,
+      ),
     ),
     Courses(
       code: "CE435",
       name: "Image Processing",
       color: 0xFF818cf8,
+      startClassTime: DateTime(
+        0,
+        0,
+        0,
+        14,
+        30,
+      ),
+      endClassTime: DateTime(
+        0,
+        0,
+        0,
+        16,
+        50,
+      ),
     ),
     Courses(
       code: "IJP101",
       name: "Japanese",
       color: 0xFFf472b6,
+      startClassTime: DateTime(
+        0,
+        0,
+        0,
+        12,
+      ),
+      endClassTime: DateTime(
+        0,
+        0,
+        0,
+        14,
+        30,
+      ),
     ),
     Courses(
       code: "CE411",
       name: "Software Engineering",
       color: 0xFFfbbf24,
+      startClassTime: DateTime(
+        0,
+        0,
+        0,
+        9,
+      ),
+      endClassTime: DateTime(
+        0,
+        0,
+        0,
+        12,
+      ),
     ),
   ];
 
@@ -50,6 +113,22 @@ class _TotalCoursesPageState extends State<TotalCoursesPage> {
     setState(() {
       prefs.setBool('isLogin', value);
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    context.read<TotalCoursesBloc>().add(
+          TotalCoursesEventSelect(
+            Courses(
+              code: '',
+              name: '',
+              color: 0,
+              startClassTime: DateTime.now(),
+              endClassTime: DateTime.now(),
+            ),
+          ),
+        );
   }
 
   @override
@@ -96,8 +175,9 @@ class _TotalCoursesPageState extends State<TotalCoursesPage> {
                 Navigator.pushNamed(context, AppRoute.profile);
               },
               child: CircleAvatar(
-                  radius: 50,
-                  backgroundImage: AssetImage('lib/images/profile.jpg')),
+                radius: 50,
+                backgroundImage: AssetImage('lib/images/profile.jpg'),
+              ),
             ),
           )
         ],
