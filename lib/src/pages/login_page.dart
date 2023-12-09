@@ -28,7 +28,11 @@ class _LoginPageState extends State<LoginPage> {
     });
 
     if (_isLogin == true) {
-      Navigator.pushNamed(context, AppRoute.navigationMenu);
+      if (context.read<TotalCoursesBloc>().state.courses.code == '') {
+        Navigator.pushNamed(context, AppRoute.totalCoursesPage);
+      } else {
+        Navigator.pushNamed(context, AppRoute.navigationMenu);
+      }
     }
   }
 

@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
 import 'package:flutter_101/src/bloc/total_courses/total_courses_bloc.dart';
@@ -73,26 +73,80 @@ class _CheckInState extends State<CheckIn> {
                                 ],
                               ),
                               IconButton(
-                                  onPressed: () {
-                                    context.read<TotalCoursesBloc>().add(
-                                          TotalCoursesEventSelect(
-                                            Courses(
-                                              code: '',
-                                              name: '',
-                                              color: 0,
-                                            ),
+                                onPressed: () {
+                                  context.read<TotalCoursesBloc>().add(
+                                        TotalCoursesEventSelect(
+                                          Courses(
+                                            code: '',
+                                            name: '',
+                                            color: 0,
                                           ),
-                                        );
-                                    Navigator.pushNamed(
-                                        context, AppRoute.totalCoursesPage);
-                                  },
-                                  icon: Icon(
-                                    Iconsax.setting_35,
-                                    color: Colors.grey[700],
-                                  ))
+                                        ),
+                                      );
+                                  Navigator.pushNamed(
+                                      context, AppRoute.totalCoursesPage);
+                                },
+                                icon: Icon(
+                                  Iconsax.setting_35,
+                                  color: Colors.grey[700],
+                                ),
+                              ),
                             ],
                           ),
-                        )
+                        ),
+                        SizedBox(height: 16),
+                        Container(
+                          height: double.tryParse('180'),
+                          padding: EdgeInsets.symmetric(horizontal: 16),
+                          decoration: BoxDecoration(
+                            color: const Color.fromRGBO(255, 255, 255, 1),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Column(
+                            children: [],
+                          ),
+                        ),
+                        SizedBox(height: 16),
+                        Container(
+                          height: double.tryParse('200'),
+                          padding: EdgeInsets.symmetric(horizontal: 16),
+                          decoration: BoxDecoration(
+                            color: const Color.fromRGBO(255, 255, 255, 0.70),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    height: 150,
+                                    width: 150,
+                                    decoration: BoxDecoration(
+                                        color: Colors.blue,
+                                        borderRadius:
+                                            BorderRadius.circular(100)),
+                                    child: Icon(Iconsax.location5,
+                                        color: Colors.white, size: 80),
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 16),
+                        Container(
+                          height: double.tryParse('220'),
+                          padding: EdgeInsets.symmetric(horizontal: 16),
+                          decoration: BoxDecoration(
+                            color: const Color.fromRGBO(255, 255, 255, 1),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Column(
+                            children: [],
+                          ),
+                        ),
                       ],
                     ),
                   )
