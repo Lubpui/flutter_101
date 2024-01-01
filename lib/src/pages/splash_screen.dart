@@ -8,8 +8,6 @@ import 'package:lottie/lottie.dart';
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
-  //Test feature
-
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
